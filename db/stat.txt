@@ -1,0 +1,4 @@
+la nombre des Candidates : (None,) 
+les Candidates Admis : None 
+le nombre de candidates non admis : None 
+la note maximal est : Nonela note minimal est : None
