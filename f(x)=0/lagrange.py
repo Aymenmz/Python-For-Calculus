@@ -5,7 +5,7 @@ def lagrange(f, a, b, eps=10**(-6)):
     x = (b * f(a) - a * f(b)) / (f(a) - f(b))
 
     while abs(f(x)) > eps:
-        if (f(a) * f(x) <= 0):
+        if  f(a) * f(x) <= 0:
             b = x
         else:
             a = x

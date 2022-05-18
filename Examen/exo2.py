@@ -8,20 +8,47 @@
         y0 et la liste Lt des réels correspondant aux valeurs de ti et qui retourne la liste [y0, y1, y2, …, yn-1] la
         solution de l'équation différentielles y' (t)= f (y(t),t).
 """
-import matplotlib.pyplot as plt
+
 
 def euler(f, y0, Lt):
-    a = Lt[0]
-    b = Lt[-1]
     n = len(Lt)
-    y = [y0] * n
-    h = (b - a) / n
+    Y = [y0] * n
 
     for i in range(n):
-        y[i+1] = y[i] + f(y[i], Lt[i])
-    return y
-def func(t, y):
-    return 1/(2*y+1)
-y, t = euler(func, 1, 10, 0, 200)
-plt.plot(t, y)
-plt.show()
+        Y[i + 1] = Y[i] + f(Y[i], Lt[i])
+    return Y
+
+
+'''
+    Écrire la fonction def heun(f, t0,T,y0,N) : qui prend en paramètres la fonction f, la condition initiale
+    t0, la valeur finale du temps T, y0 la valeur de f en t0 et le nombre de noeuds N et qui retourne la liste
+    [y0, y1, y2, …, yn-1] la solution de l'équation différentielles y' (t)= f (y(t),t).
+'''
+
+
+def Heun(f, t0, y0, T, N):
+    h = T / N
+    tt = [t0 + i * h for i in range(N + 1)]
+    Y = []
+    y = y0
+    for t in tt:
+        k1 = f(t, y)
+        k2 = f(t + h, h * k1)
+        y += h * (k1 + k2) / 2
+        Y.append(y)
+    return tt, Y
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

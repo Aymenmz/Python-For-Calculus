@@ -6,7 +6,7 @@ def madichotomie(f, a, b, eps=10**(-6)):
     while abs(b-a) > eps:
         m = (a + b) / 2
 
-        if(f(a) * f(m) < 0):
+        if f(a) * f(m) < 0:
             b = m
         else:
             a = m
@@ -16,7 +16,7 @@ def madichotomie(f, a, b, eps=10**(-6)):
 def dichoRec(f, a, b, eps=10**(-6)):
     if abs(b-a) > eps:
         m = (a+b)/2
-        if(f(a) * f(m) < 0):
+        if f(a) * f(m) < 0:
             b = m
         else:
             a = m

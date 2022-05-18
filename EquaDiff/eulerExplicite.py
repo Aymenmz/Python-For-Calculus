@@ -12,10 +12,5 @@ def eulerExpl(f, a, b, y0, n):
     return y
 
 
-def func(t, y):
-    return 1 / (2 * y + 1)
 
 
-y, t = eulerExpl(func, 1, 10, 0, 200)
-plt.plot(t, y)
-plt.show()

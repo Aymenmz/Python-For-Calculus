@@ -60,10 +60,11 @@ def recherche_dichotomique(factures, nom_client):
 
         elif factures[m][1] < nom_client:
             a = m + 1
-
-        else:
+        elif factures[m][1] > nom_client:
             b = m - 1
-    return []
+        else:
+            return []
+
 
 
 # Q5. Ecrire une fonction d’entête maj_factures(factures) qui permet d’augmenter de 10% par an de retard les prix
